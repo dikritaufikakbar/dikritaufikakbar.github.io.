@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portofolio | ポートフォリオ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portofolio.css">
+</head>
+<body>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top" id="logo">桜</a>
+    <ul>
+      <li><a class="l" href="#tentang">Tentang</a></li>
+      <li><a class="l" href="#skill">Skill</a></li>
+      <li><a class="l" href="#proyek">Proyek</a></li>
+      <li><a class="l" href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="speed" aria-hidden="true"></div>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kata" id="kata">ようこそ</p>
+    <h1 id="heroName">Namamu</h1>
+    <div class="bubble" id="heroTag">Halo! Aku mahasiswa yang suka ngoding.</div>
+    <div class="cta">
+      <a class="btn" href="#proyek">Lihat proyek</a>
+      <a class="btn alt" href="#kontak">Ajak ngobrol</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="tentang">
+    <div class="wrap">
+      <h2>自己紹介 Tentang aku</h2>
+      <p class="sub">Perkenalan singkat dari pemilik halaman ini</p>
+      <div class="panel about">
+        <div class="avatar" id="avatar">🌸</div>
+        <div>
+          <h3 id="aboutName">Namamu</h3>
+          <p id="aboutBio"></p>
+          <div class="stats">
+            <div class="stat"><b id="sRepos">-</b>repo publik</div>
+            <div class="stat"><b id="sStars">-</b>bintang</div>
+            <div class="stat"><b id="sFollow">-</b>pengikut</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skill">
+    <div class="wrap">
+      <h2>スキル Skill</h2>
+      <p class="sub">Bahasa dan alat yang kupakai</p>
+      <div class="skills" id="skills"></div>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <div class="wrap">
+      <h2>作品 Proyek</h2>
+      <p class="sub">Tugas dan project coding, diambil langsung dari GitHub</p>
+      <div class="chips" id="chips" role="group" aria-label="Filter bahasa"></div>
+      <div class="grid" id="repos"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+      <p class="note" id="repoNote"></p>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact">
+    <div class="wrap">
+      <h2>連絡 Kontak</h2>
+      <div class="panel" style="margin-top:30px">
+        <p style="font-weight:900;font-size:1.2rem">Mau kolaborasi atau sekadar tukar ide? Kirim pesan saja.</p>
+        <div class="links" id="contactLinks"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> <span id="footName"></span> · ありがとう！</footer>
+
+<script src="portofolio.js"></script>
+</body>
+</html>

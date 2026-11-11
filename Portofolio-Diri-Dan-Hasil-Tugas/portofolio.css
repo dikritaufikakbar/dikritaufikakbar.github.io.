@@ -1,0 +1,88 @@
+:root{
+  --night:#1a1b3a; --night2:#24265a; --sakura:#ffc2d4; --sakura-d:#ff7aa2;
+  --moon:#ffe27a; --sky:#7fd8ff; --paper:#fff8f2; --ink:#12122a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;background:var(--night);color:var(--paper);line-height:1.7;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--moon);outline-offset:3px}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:1}
+main,header,footer{position:relative;z-index:2}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(26,27,58,.9);backdrop-filter:blur(8px);border-bottom:3px solid var(--sakura)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.logo{font-family:"Dela Gothic One",sans-serif;color:var(--sakura);text-decoration:none;font-size:1.2rem}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav a.l{display:block;padding:4px 14px;border-radius:99px;text-decoration:none;font-weight:700;font-size:.9rem}
+nav a.l:hover{background:var(--sakura);color:var(--ink)}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;padding:70px 0 90px;overflow:hidden;
+  background:radial-gradient(circle at 50% 38%,var(--night2) 0,var(--night) 70%)}
+.speed{position:absolute;inset:-50%;background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,255,255,.07) 0 1.2deg,transparent 1.2deg 6deg);animation:spin 90s linear infinite}
+.moon{position:absolute;top:9%;right:10%;width:clamp(90px,16vw,170px);aspect-ratio:1;border-radius:50%;background:var(--moon);box-shadow:0 0 70px 12px rgba(255,226,122,.45)}
+.moon::after{content:"";position:absolute;inset:18% 0 0 22%;border-radius:50%;background:rgba(0,0,0,.06)}
+.hero .wrap{position:relative}
+.kata{font-family:"Dela Gothic One",sans-serif;font-size:clamp(1rem,3vw,1.5rem);color:var(--sky);letter-spacing:.3em}
+h1{font-family:"Dela Gothic One",sans-serif;font-size:clamp(2.6rem,9vw,6rem);line-height:1.1;margin:10px 0 16px;color:var(--paper);
+  text-shadow:4px 4px 0 var(--sakura-d),8px 8px 0 var(--ink)}
+.bubble{display:inline-block;position:relative;background:var(--paper);color:var(--ink);border:4px solid var(--ink);border-radius:26px;padding:14px 24px;font-weight:900;max-width:560px;box-shadow:6px 6px 0 var(--sakura-d)}
+.bubble::after{content:"";position:absolute;left:50%;bottom:-24px;width:26px;height:26px;background:var(--paper);border-right:4px solid var(--ink);border-bottom:4px solid var(--ink);transform:translateX(-50%) rotate(45deg)}
+.cta{margin-top:50px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-weight:900;text-decoration:none;padding:12px 26px;border:4px solid var(--ink);border-radius:14px;background:var(--moon);color:var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn.alt{background:var(--sakura)}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+
+/* sections */
+section{padding:80px 0}
+h2{font-family:"Dela Gothic One",sans-serif;font-size:clamp(1.8rem,5vw,3rem);margin-bottom:8px;display:inline-block;background:var(--sakura);color:var(--ink);padding:2px 20px;border:4px solid var(--ink);box-shadow:6px 6px 0 var(--sky);transform:rotate(-1.5deg)}
+.sub{color:var(--sky);font-weight:700;margin:14px 0 30px}
+.panel{background:var(--paper);color:var(--ink);border:4px solid var(--ink);border-radius:6px;padding:24px;box-shadow:8px 8px 0 var(--sakura-d);position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;right:0;top:0;width:130px;height:130px;background:radial-gradient(var(--sakura-d) 22%,transparent 24%) 0 0/12px 12px;opacity:.25;-webkit-mask:linear-gradient(225deg,#000,transparent 70%);mask:linear-gradient(225deg,#000,transparent 70%)}
+
+.about{display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:center}
+.avatar{aspect-ratio:1;border-radius:50%;border:5px solid var(--ink);background:linear-gradient(160deg,var(--sky),var(--sakura));display:grid;place-items:center;font-size:5.5rem;box-shadow:6px 6px 0 var(--ink);overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.about h3{font-family:"Dela Gothic One",sans-serif;font-size:1.6rem;margin-bottom:6px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.stat{background:var(--night);color:var(--paper);border-radius:12px;padding:8px 16px;font-weight:700;font-size:.9rem}
+.stat b{color:var(--moon);font-size:1.2rem;margin-right:4px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.skill{background:var(--night2);border:4px solid var(--sakura);border-radius:16px;padding:18px}
+.skill h3{font-size:1.1rem;margin-bottom:10px}
+.bar{height:14px;background:var(--night);border-radius:99px;border:2px solid var(--sakura);overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--sakura-d));width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.skill small{color:var(--sky)}
+
+/* repos */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chip{font:inherit;font-weight:700;cursor:pointer;border:3px solid var(--sakura);background:transparent;color:var(--paper);padding:4px 16px;border-radius:99px}
+.chip[aria-pressed="true"],.chip:hover{background:var(--sakura);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
+.repo{display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border:4px solid var(--ink);border-radius:6px;padding:18px;box-shadow:6px 6px 0 var(--sky);transition:transform .15s}
+.repo:hover{transform:rotate(-1deg) translateY(-4px)}
+.repo h3{font-family:"Dela Gothic One",sans-serif;font-size:1.1rem;word-break:break-word}
+.repo p{flex:1;margin:8px 0 14px;font-size:.92rem}
+.meta{display:flex;gap:10px;flex-wrap:wrap;font-size:.82rem;font-weight:700;margin-bottom:12px}
+.lang{background:var(--night);color:var(--moon);padding:1px 10px;border-radius:99px}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{font-weight:900;font-size:.85rem;text-decoration:none;padding:5px 14px;border:3px solid var(--ink);border-radius:10px;background:var(--moon)}
+.links a.demo{background:var(--sakura)}
+.links a:hover{background:var(--ink);color:var(--paper)}
+.note{margin-top:18px;font-size:.9rem;color:var(--sky);font-weight:700}
+.skeleton{height:180px;border:4px dashed var(--sakura);border-radius:6px;animation:pulse 1.2s ease-in-out infinite}
+
+/* contact */
+.contact{text-align:center}
+.contact .links{justify-content:center;margin-top:20px}
+.contact .links a{font-size:1rem;padding:10px 24px;box-shadow:4px 4px 0 var(--ink)}
+footer{text-align:center;padding:30px 20px 50px;color:var(--sakura);font-weight:700;border-top:3px solid var(--sakura)}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{opacity:.4}}
+@media(max-width:720px){.about{grid-template-columns:1fr;text-align:center}.avatar{max-width:200px;margin:auto}.stats{justify-content:center}.moon{top:4%;right:4%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
